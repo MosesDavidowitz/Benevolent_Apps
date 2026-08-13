@@ -367,6 +367,13 @@
 
     .icon-box svg { width: 25px; height: 25px; }
 
+    .icon-box img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
+    }
+
     .launch {
       width: 38px;
       height: 38px;
@@ -597,7 +604,7 @@
         <strong>Benevolent Home Care LLC</strong><br />
         1021 McDonald Avenue, Brooklyn, NY 11230<br />
         718-345-1000 &nbsp;·&nbsp; benevolenthomecare.com
-        <div class="project-line">A Davidowitz Project © <span id="year"></span> · Benevolent Apps v2</div>
+        <div class="project-line">A Davidowitz Project © <span id="year"></span> · Benevolent Apps v3</div>
       </div>
     </div>
   </footer>
@@ -672,12 +679,23 @@
         icon: "link"
       },
       {
+        title: "HHAeXchange",
+        description: "Access HHAeXchange for scheduling, EVV, visits, billing, and day-to-day home care operations.",
+        url: "https://app.hhaexchange.com/identity/account/login",
+        category: "Operations & Reporting",
+        kicker: "Agency System",
+        tag: "HHAx",
+        logo: "images/HHAx.png",
+        icon: "link"
+      },
+      {
         title: "ARLA",
         description: "Access Benevolent's ARLA portal for caregiver training and in-service education.",
         url: "https://benevolent.arla.ai/login",
         category: "HR & Compliance",
         kicker: "Training",
         tag: "ARLA",
+        logo: "images/Arla.png",
         icon: "link"
       }
     ];
@@ -764,7 +782,7 @@
           card.setAttribute("aria-label", `${item.title}, opens in a new tab`);
           card.innerHTML = `
             <div class="card-top">
-              <div class="icon-box">${iconSvg[item.icon] || iconSvg.link}</div>
+              <div class="icon-box">${item.logo ? `<img src="${item.logo}" alt="" />` : (iconSvg[item.icon] || iconSvg.link)}</div>
               <div class="launch">${externalArrow}</div>
             </div>
             <h3 class="app-title">${item.title}</h3>
